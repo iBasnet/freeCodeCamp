@@ -77,7 +77,7 @@ form {
     flex-direction: column;
     gap: 1.5rem;
     height: auto;
-    width: 33rem;
+    width: 35rem;
     padding: 3rem;
     font-size: 1rem;
     background-color: rgb(255, 255, 255, 0.15);
@@ -88,6 +88,7 @@ form {
 
 form h1 {
     font-size: 2.5rem;
+    padding: 0.25rem 0rem;
     text-align: center;
     font-weight: 600;
     font-family: "Clash Display";
@@ -101,32 +102,40 @@ form h1 {
 
 form input,
 form select {
-    font-size: 1rem;
-    font-weight: 500;
-    padding: 0.5rem 1rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+    padding: 0.5rem 1.5rem;
     outline: none;
-    border: none;
+    border: 2px solid rgb(255, 255, 255, 0.25);
     margin: 0.5rem 0rem;
-    border-radius: 10px;
-    height: 3rem;
-    color: var(--clr-slate800);
-    background-color: var(--clr-slate100);
+    border-radius: 50px;
+    height: 3.5rem;
+    color: #25043E;
+    background-color: rgb(255, 255, 255, 0.3);
 }
 
 form input::placeholder {
-    color: var(--clr-slate700);
+    color: rgb(37, 4, 62, 0.7);
 }
 
 form label {
+    font-size: 1.2rem;
     font-weight: 600;
 }
 
+form .langs label,
+form .os label {
+    font-size: 1.1rem;
+    font-family: "Source Code Pro";
+    font-weight: 400;
+}
+
 form select {
-    color: var(--clr-slate800);
+    color: #25043E;
 }
 
 form select option {
-    color: var(--clr-slate700);
+    color: rgb(37, 4, 62, 0.7);
     font-weight: 500;
 }
 
@@ -177,7 +186,7 @@ form select option {
 .user__langs>.langs>label {
     /* border: 2px solid yellow; */
     /* 👇👇👇 */
-    margin: auto;
+    /* margin: auto; */
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -204,7 +213,7 @@ form select option {
 }
 
 .user__os>.os>label {
-    margin: auto;
+    /* margin: auto; */
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -223,12 +232,14 @@ form select option {
     min-width: 100%;
     max-width: 100%;
     min-height: 7rem;
-    font-size: 1rem;
+    font-size: 1.1rem;
     font-family: "General Sans", system-ui;
     font-weight: 500;
     color: var(--clr-slate800);
     border-radius: 10px;
     padding: 0.5rem 1rem;
+    background-color: rgb(255, 255, 255, 0.2);
+    color: var(--clr-slate200);
 }
 
 .btn__wrapper {
@@ -267,7 +278,55 @@ form select option {
 
 @media screen and (max-width: 600px) {
 
-    body {
-        display: block;
+    form {
+        width: 30rem;
+    }
+}
+
+@media screen and (max-width: 525px) {
+
+    form {
+        width: 25rem;
+        padding: 1rem;
+    }
+
+    form h1 {
+        font-size: 2rem;
+        padding: 0.5rem;
+        margin-top: 1.5rem;
+    }
+
+    .langs,
+    .os {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 3rem 3rem;
+        justify-items: start;
+    }
+
+    .langs label,
+    .os label {
+        transform: translateX(1rem);
+    }
+
+}
+
+@media screen and (max-width: 420px) {
+
+    form {
+        width: 23rem;
+        padding: 1rem;
+    }
+
+    form input,
+    form select,
+    form option {
+        font-size: 1.2rem;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+    form {
+        width: 21rem;
     }
 }

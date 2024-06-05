@@ -24,14 +24,14 @@
             <form id="myForm" spellcheck="false">
                 <h1>Sample Survey</h1>
                 <section class="user__info">
-                    <input type="text" placeholder="Name">
-                    <input type="email" placeholder="Email">
-                    <input type="number" placeholder="Age" min="13" max="19">
+                    <input type="text" placeholder="Name" required>
+                    <input type="email" placeholder="Email" required>
+                    <input type="number" placeholder="Age" min="13" max="19" required>
                 </section>
                 <section class="user__role">
                     <label>Your Role in Development:</label>
                     <select>
-                        <option value="">UI-UX Designer</option>
+                        <option value="">UI/UX Designer</option>
                         <option value="" selected>Front-End Developer</option>
                         <option value="">Back-End Developer</option>
                         <option value="">Full-Stack Developer</option>
@@ -54,7 +54,7 @@
                         <label><input type="radio" name="os">Windows</label>
                         <label><input type="radio" name="os">macOS</label>
                         <label><input type="radio" name="os">Linux</label>
-                        <label><input type="radio" name="os">Other</label>
+                        <label><input type="radio" name="os">Mobile</label>
                     </label>
                 </section>
                 <section class="user__feedback">
