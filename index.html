@@ -4,18 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Survery Form™ - Pratik Basnet</title>
     <link rel="stylesheet" href="style.css">
     <link
         href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&f[]=general-sans@200,300,400,500,600,700&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital@0;1&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <header></header>
+    <header id="header">
+        <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form"
+            target="_blank">
+            <p>freeCodeCamp.org Survey Form</p>
+        </a>
+    </header>
     <main>
         <div class="form__wrapper">
-            <form action="">
+            <form id="myForm" spellcheck="false">
                 <h1>Sample Survey</h1>
                 <section class="user__info">
                     <input type="text" placeholder="Name">
@@ -23,37 +29,63 @@
                     <input type="number" placeholder="Age" min="13" max="19">
                 </section>
                 <section class="user__role">
-                    <label for="">Your Role in Development:</label>
-                    <select name="" id="">
+                    <label>Your Role in Development:</label>
+                    <select>
                         <option value="">UI-UX Designer</option>
-                        <option value="">Front-End Developer</option>
+                        <option value="" selected>Front-End Developer</option>
                         <option value="">Back-End Developer</option>
-                        <option value="" selected>Full-Stack Developer</option>
+                        <option value="">Full-Stack Developer</option>
                         <option value="">Data Scientist</option>
                     </select>
+
                 </section>
                 <section class="user__langs">
-                    <label for="">Laguages & Tools You Use:</label>
+                    <label>Laguages & Tools You Use:</label>
                     <label class="langs">
-                        <label for=""><input type="checkbox" checked>HTML</label>
-                        <label for=""><input type="checkbox" checked>CSS</label>
-                        <label for=""><input type="checkbox">React</label>
-                        <label for=""><input type="checkbox">Tailwind</label>
+                        <label><input type="checkbox" checked>CSS</label>
+                        <label><input type="checkbox" checked>React</label>
+                        <label><input type="checkbox">Python</label>
+                        <label><input type="checkbox">C++</label>
                     </label>
                 </section>
                 <section class="user__os">
-                    <label for="">Operating System You Use:</label>
+                    <label>Operating System You Use:</label>
                     <label class="os">
-                        <label for=""><input type="radio">Windows</label>
-                        <label for=""><input type="radio">macOS</label>
-                        <label for=""><input type="radio">Linux</label>
-                        <label for=""><input type="radio">Other</label>
+                        <label><input type="radio" name="os">Windows</label>
+                        <label><input type="radio" name="os">macOS</label>
+                        <label><input type="radio" name="os">Linux</label>
+                        <label><input type="radio" name="os">Other</label>
                     </label>
+                </section>
+                <section class="user__feedback">
+                    <label>Share Your Experience:</label>
+                    <textarea></textarea>
+                </section>
+                <section class="btn__wrapper">
+                    <input type="reset" value="RESET" id="scrollToHeader">
+                    <input type="submit" value="SUBMIT">
                 </section>
             </form>
         </div>
     </main>
-    <footer></footer>
+    <footer>
+        <a href="https://pratikbasnet.com.np" target="_blank">
+            <p>~ BASNET ~</p>
+        </a>
+    </footer>
+    <!-- JavaScript -->
+    <script>
+
+        document.getElementById("myForm").addEventListener("submit", (event) => {
+            event.preventDefault();
+            alert("THE FORM HAS BEEN SUBMITTED! 🎉🎊")
+        })
+
+        document.getElementById("scrollToHeader").addEventListener("click", (event) => {
+            document.getElementById("header").scrollIntoView({ behavior: "smooth" });
+        });
+
+    </script>
 </body>
 
 </html>

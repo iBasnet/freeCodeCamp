@@ -26,6 +26,10 @@
     font-family: "General Sans", system-ui;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: var(--clr-dark);
     color: var(--clr-light);
@@ -43,9 +47,22 @@ footer {
     height: 5rem;
 }
 
-header {
+header,
+footer {
     display: grid;
     place-items: center;
+}
+
+header a,
+footer a {
+    text-decoration: none;
+}
+
+header p,
+footer p {
+    font-family: "Source Code Pro", system-ui;
+    color: var(--clr-slate500);
+    cursor: pointer;
 }
 
 /* FORM PARENT - GLOBAL CSS */
@@ -56,8 +73,9 @@ header {
 }
 
 form {
-    /* display: flex; */
-    /* flex-direction: column; */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
     height: auto;
     width: 33rem;
     padding: 3rem;
@@ -71,12 +89,11 @@ form {
 form h1 {
     font-size: 2.5rem;
     text-align: center;
-    margin-bottom: 2rem;
-    color: var(--clr-light);
     font-weight: 600;
     font-family: "Clash Display";
     backdrop-filter: blur(100px);
     border-radius: 0 2.5rem 0 2.5rem;
+    color: var(--clr-light);
     background-color: hsl(274, 87%, 13%);
     border-bottom: 4px solid rgb(255, 255, 255, 0.25);
     border-right: 4px solid rgb(255, 255, 255, 0.25);
@@ -102,7 +119,6 @@ form input::placeholder {
 
 form label {
     font-weight: 600;
-    margin-top: 1.5rem;
 }
 
 form select {
@@ -112,6 +128,14 @@ form select {
 form select option {
     color: var(--clr-slate700);
     font-weight: 500;
+}
+
+/* :FORM: USER USER USER */
+.user__role,
+.user__langs,
+.user__os,
+.user__feedback {
+    gap: 1rem;
 }
 
 /* FORM: USER INFO */
@@ -186,6 +210,49 @@ form select option {
     gap: 0.5rem;
 }
 
+/* FORM: USER FEEDBACK */
+
+.user__feedback {
+    display: flex;
+    flex-direction: column;
+}
+
+.user__feedback textarea {
+    background-color: var(--clr-slate100);
+    outline: none;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: 7rem;
+    font-size: 1rem;
+    font-family: "General Sans", system-ui;
+    font-weight: 500;
+    color: var(--clr-slate800);
+    border-radius: 10px;
+    padding: 0.5rem 1rem;
+}
+
+.btn__wrapper {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: -0.5rem;
+}
+
+.btn__wrapper input {
+    width: 100%;
+    cursor: pointer;
+    color: var(--clr-light);
+    font-weight: 600;
+    background-color: hsl(274, 87%, 15%);
+    border-bottom: 4px solid rgb(255, 255, 255, 0.25);
+    border-right: 4px solid rgb(255, 255, 255, 0.25);
+    transition: 0.3s;
+}
+
+.btn__wrapper input:hover {
+    background-color: hsl(274, 87%, 20%);
+    transform: translateY(-7px);
+}
+
 /* EXTERNAL CSS */
 
 ::-webkit-scrollbar {
@@ -194,4 +261,13 @@ form select option {
 
 ::-webkit-scrollbar-thumb {
     background-color: var(--clr-slate700);
+}
+
+/* Responsiveness */
+
+@media screen and (max-width: 600px) {
+
+    body {
+        display: block;
+    }
 }
