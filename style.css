@@ -16,10 +16,182 @@
     --clr-purple-600: #9333ea;
     --clr-rose-500: #f43f5e;
     --clr-rose-600: #e11d48;
+    --clr-artic-lime: #d0ff14;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "General Sans", system-ui;
+}
+
+body {
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+    background-image: url(wallpaper.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: scroll;
+    background-size: cover;
+}
+
+/* HEADER && FOOTER */
+
+header,
+footer {
+    height: 5rem;
+}
+
+header {
+    display: grid;
+    place-items: center;
+}
+
+/* FORM PARENT - GLOBAL CSS */
+
+.form__wrapper {
+    display: flex;
+    justify-content: center
+}
+
+form {
+    /* display: flex; */
+    /* flex-direction: column; */
+    height: auto;
+    width: 33rem;
+    padding: 3rem;
+    font-size: 1rem;
+    background-color: rgb(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border: 2px solid rgb(255, 255, 255, 0.25);
+    border-radius: 2rem;
+}
+
+form h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--clr-light);
+    font-weight: 600;
+    font-family: "Clash Display";
+    backdrop-filter: blur(100px);
+    border-radius: 0 2.5rem 0 2.5rem;
+    background-color: hsl(274, 87%, 13%);
+    border-bottom: 4px solid rgb(255, 255, 255, 0.25);
+    border-right: 4px solid rgb(255, 255, 255, 0.25);
+}
+
+form input,
+form select {
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    outline: none;
+    border: none;
+    margin: 0.5rem 0rem;
+    border-radius: 10px;
+    height: 3rem;
+    color: var(--clr-slate800);
+    background-color: var(--clr-slate100);
+}
+
+form input::placeholder {
+    color: var(--clr-slate700);
+}
+
+form label {
+    font-weight: 600;
+    margin-top: 1.5rem;
+}
+
+form select {
+    color: var(--clr-slate800);
+}
+
+form select option {
+    color: var(--clr-slate700);
+    font-weight: 500;
+}
+
+/* FORM: USER INFO */
+
+.user__info input {
+    /* 👇👇👇 */
+    width: 100%;
+}
+
+/* FORM: USER ROLE */
+
+.user__role {
+    display: flex;
+    flex-direction: column;
+}
+
+/* FORM: USER LANGS */
+
+.user__langs {
+    display: flex;
+    flex-direction: column;
+}
+
+.user__langs input {
+    /* 👇👇👇 */
+    height: 1.3rem;
+    width: 1.3rem;
+    /* margin: 0; */
+    accent-color: var(--clr-purple-600);
+}
+
+.langs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 3rem;
+    place-items: center;
+}
+
+.user__langs>.langs>label {
+    /* border: 2px solid yellow; */
+    /* 👇👇👇 */
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* FORM: USER OS */
+
+.user__os {
+    display: flex;
+    flex-direction: column;
+}
+
+.user__os input {
+    height: 1.3rem;
+    width: 1.3rem;
+    accent-color: var(--clr-purple-600);
+}
+
+.os {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 3rem;
+    place-items: center;
+}
+
+.user__os>.os>label {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* EXTERNAL CSS */
+
+::-webkit-scrollbar {
+    background-color: var(--clr-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--clr-slate700);
 }

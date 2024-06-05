@@ -6,10 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <link
+        href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&f[]=general-sans@200,300,400,500,600,700&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-
+    <header></header>
+    <main>
+        <div class="form__wrapper">
+            <form action="">
+                <h1>Sample Survey</h1>
+                <section class="user__info">
+                    <input type="text" placeholder="Name">
+                    <input type="email" placeholder="Email">
+                    <input type="number" placeholder="Age" min="13" max="19">
+                </section>
+                <section class="user__role">
+                    <label for="">Your Role in Development:</label>
+                    <select name="" id="">
+                        <option value="">UI-UX Designer</option>
+                        <option value="">Front-End Developer</option>
+                        <option value="">Back-End Developer</option>
+                        <option value="" selected>Full-Stack Developer</option>
+                        <option value="">Data Scientist</option>
+                    </select>
+                </section>
+                <section class="user__langs">
+                    <label for="">Laguages & Tools You Use:</label>
+                    <label class="langs">
+                        <label for=""><input type="checkbox" checked>HTML</label>
+                        <label for=""><input type="checkbox" checked>CSS</label>
+                        <label for=""><input type="checkbox">React</label>
+                        <label for=""><input type="checkbox">Tailwind</label>
+                    </label>
+                </section>
+                <section class="user__os">
+                    <label for="">Operating System You Use:</label>
+                    <label class="os">
+                        <label for=""><input type="radio">Windows</label>
+                        <label for=""><input type="radio">macOS</label>
+                        <label for=""><input type="radio">Linux</label>
+                        <label for=""><input type="radio">Other</label>
+                    </label>
+                </section>
+            </form>
+        </div>
+    </main>
+    <footer></footer>
 </body>
 
 </html>
