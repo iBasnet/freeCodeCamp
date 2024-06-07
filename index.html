@@ -10,6 +10,8 @@
         href="https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&f[]=general-sans@200,300,400,500,600,700&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital@0;1&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 
 <body>
@@ -23,10 +25,13 @@
         <div class="form__wrapper">
             <form id="myForm" spellcheck="false">
                 <h1>Sample Survey</h1>
-                <section class="user__info">
+                <section class=" user__info">
+                    <i class='bx bxs-user bx-sm'></i>
                     <input type="text" placeholder="Name" required>
+                    <i class='bx bxs-envelope bx-sm'></i>
                     <input type="email" placeholder="Email" required>
-                    <input type="number" placeholder="Age" min="13" max="19" required>
+                    <i class='bx bxs-leaf bx-sm'></i>
+                    <input type="number" placeholder="Age" min="0" max="141" required>
                 </section>
                 <section class="user__role">
                     <label>Your Role in Development:</label>
@@ -63,10 +68,12 @@
                 </section>
                 <section class="btn__wrapper">
                     <input type="reset" value="RESET" id="scrollToHeader">
-                    <input type="submit" value="SUBMIT">
+                    <input type="submit" value="SUBMIT" id="submit-btn">
                 </section>
             </form>
         </div>
+        <div class="notifications"></div>
+        <!-- TOAST NOTIFICATION -->
     </main>
     <footer>
         <a href="https://pratikbasnet.com.np" target="_blank">
@@ -78,13 +85,81 @@
 
         document.getElementById("myForm").addEventListener("submit", (event) => {
             event.preventDefault();
-            alert("THE FORM HAS BEEN SUBMITTED! 🎉🎊")
+            // alert("THE FORM HAS BEEN SUBMITTED! 🎉🎊");
+            success();
+            document.getElementById("header").scrollIntoView({ behavior: "smooth" });
+
         })
 
         document.getElementById("scrollToHeader").addEventListener("click", (event) => {
             document.getElementById("header").scrollIntoView({ behavior: "smooth" });
+            reset();
         });
 
+
+        document.getElementById("submit-btn").addEventListener("click", () => {
+            const inputs = document.querySelectorAll("input");
+
+            isEmpty = false;
+            inputs.forEach((input) => {
+                if (input.value.trim() === "") {
+                    isEmpty = true;
+                }
+            })
+
+            if (isEmpty) {
+                // alert("FIELD CANNOT BE EMPTY! ⚠️")
+                warning();
+            }
+            else {
+                return
+            }
+        })
+
+        // TOAST NOTIFICATION
+
+        let notifications = document.querySelector('.notifications');
+
+        function createToast(type, icon, title, text) {
+            let newToast = document.createElement('div');
+            newToast.innerHTML = `
+            <div class="toast ${type}">
+                <i class="${icon}"></i>
+                <div class="content">
+                    <div class="title">${title}</div>
+                    <span>${text}</span>
+                </div>
+                <i class="fa-solid fa-xmark" onclick="(this.parentElement).remove()"></i>
+            </div>`;
+            notifications.appendChild(newToast);
+            newToast.timeOut = setTimeout(
+                () => newToast.remove(), 3000
+            )
+        }
+
+        function success() {
+            let type = 'success';
+            let icon = 'bx bxs-badge-check bx-md';
+            let title = 'DATA SENT';
+            let text = '';
+            createToast(type, icon, title, text);
+        }
+
+        function warning() {
+            let type = 'warning';
+            let icon = 'bx bxs-error bx-md';
+            let title = 'INVALID INPUT';
+            let text = '';
+            createToast(type, icon, title, text);
+        }
+
+        function reset() {
+            let type = 'info';
+            let icon = 'bx bx-refresh bx-md';
+            let title = 'FORM RESET';
+            let text = '';
+            createToast(type, icon, title, text);
+        }
     </script>
 </body>
 
