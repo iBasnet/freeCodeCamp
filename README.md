@@ -1,5 +1,3 @@
-<br>
-
 # freeCodeCamp🔥× Responsive Web Design🌿
 
 <br>
